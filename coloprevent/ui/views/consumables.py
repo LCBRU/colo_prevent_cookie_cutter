@@ -25,7 +25,7 @@ class EditData(FlashingForm):
     equipment = StringField('Equipment', validators=[DataRequired()])
     total_requested =IntegerField('Total requested', validators=[DataRequired()])
     date_requested =DateField('Date requested', validators=[DataRequired()])
-    submit = SubmitField('Edit')
+  
 
 
 #creating config for sql tables

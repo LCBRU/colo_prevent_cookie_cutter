@@ -1,20 +1,13 @@
 {% extends "ui/menu_page.html" %}
-
+{% from "lbrc/form_macros.html" import render_form_fields, render_button_bar %}
 {% block menu_page_content %}
 
 <h1>Add a new supplies request</h1>
 <form method="POST" action="{{url_for('ui.edit', id=id)}}">
-    {{ ed_form.csrf_token }}
-    <br>
-    <p>{{ ed_form.equipment.label }} {{ ed_form.equipment(size=50) }}</p>
-    <br> 
-   <p> {{ ed_form.total_requested.label }} {{ ed_form.total_requested(size=50) }}</p>
-   <br> 
-    
-   <p>Please enter the date of this edit</p>
-    <p>{{ ed_form.date_requested.label }} {{ ed_form.date_requested(size=50) }}</p>
-    <br>
-    
-    {{ ed_form.submit.label }} {{ ed_form.submit(size=50) }}
+        {{ ed_form.csrf_token }}
+        <fieldset>
+        {{ render_form_fields(ed_form) }}
+        {{ render_button_bar ('ui.edit') }}
+
 </form>
 {% endblock %}
