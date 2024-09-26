@@ -2,6 +2,7 @@
 {% from "lbrc/form_macros.html" import render_form_fields, render_button_bar %}
 {% block menu_page_content %}
 
+<section class="container">
 <h1>Add a new supplies request</h1>
 <form method="POST" action="{{url_for('ui.edit', id=id)}}">
         {{ ed_form.csrf_token }}
@@ -10,4 +11,5 @@
         {{ render_button_bar ('ui.edit') }}
 
 </form>
+</section>
 {% endblock %}
