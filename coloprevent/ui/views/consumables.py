@@ -71,7 +71,7 @@ def delete(id):
         query_del = db.session.execute(db.select(Ordered).where(Ordered.id == delete_id)).scalar()
         db.session.delete(query_del)
         db.session.commit()
-        return redirect("ui.submissions")
+        return redirect(url_for("ui.index"))
     return render_template('ui/delete.html', id=id)
     
         
@@ -96,7 +96,7 @@ def edit(id):
             query_edit.total_requested = ed_form.total_requested.data
             db.session.add(query_edit)
             db.session.commit()
-            return redirect("ui.submissions")
+            return redirect(url_for("ui.index"))
         
 
     return render_template('ui/edit.html', ed_form = ed_form, id=id)
