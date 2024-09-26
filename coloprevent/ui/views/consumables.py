@@ -87,6 +87,7 @@ def edit(id):
         prev_total_req = query_edit.total_requested
         prev_date_ordered= query_edit.date_ordered
         ed_form=EditData(equipment=prev_equip,total_requested=prev_total_req, date_requested=prev_date_ordered) 
+       
 
     
     if ed_form.validate_on_submit():
@@ -100,3 +101,4 @@ def edit(id):
         
 
     return render_template('ui/edit.html', ed_form = ed_form, id=id)
+

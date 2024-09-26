@@ -3,7 +3,7 @@
 {% block menu_page_content %}
 
 <h1>Add a new supplies request</h1>
-<form method="POST" action="{{url_for('edit', id=id)}}">
+<form method="POST" action="{{url_for('ui.edit', id=id)}}">
     {{ ed_form.csrf_token }}
     <br>
     <p>{{ ed_form.equipment.label }} {{ ed_form.equipment(size=50) }}</p>
