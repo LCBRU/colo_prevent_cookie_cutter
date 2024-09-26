@@ -1,6 +1,7 @@
 {% extends "ui/menu_page.html" %}
 
 {% block menu_page_content %}
+
 <h1>Add a new supplies request</h1>
 <form method="POST" action="{{url_for('edit', id=id)}}">
     {{ ed_form.csrf_token }}
